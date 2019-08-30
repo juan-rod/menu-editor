@@ -1,0 +1,19 @@
+$font_path: '~@/assets/fonts/';
+
+@font-face {
+  font-family: 'Albertsthal-Typewriter';
+  src: local('albertsthal-typewriter'),
+  url($font_path+'albertsthal-typewriter.woff') format('woff'),
+  url($font_path+'albertsthal-typewriter.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'artisan12';
+  src: local('artisan12'),
+  url($font_path+'artisan12.woff') format('woff'),
+  url($font_path+'artisan12.otf') format('otf');
+  font-style: normal;
+  font-weight: 400;
+}
