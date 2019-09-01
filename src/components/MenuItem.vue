@@ -2,32 +2,17 @@
 <div class="menu-item-wrapper">
     <div class="menu-item-header">
       <div class="menu-item-title">
-        <menu-title :itemTitle="itemTitle" @newItemTitle="setTitle"/>
-        <menu-location :itemLocation="itemLocation" @newItemLocation="setLocation"/>
-
+        <menu-title :itemTitle="itemTitle" @newItemTitle="setTitle" @keyup.enter="submitEdits"/>
+        <menu-location :itemLocation="itemLocation" @newItemLocation="setLocation" @keyup.enter="submitEdits"/>
       </div>
       <div class="menu-item-details">
-        <menu-price class="block" :itemPrice="itemPrice" @newItemPrice="setPrice"/>
-        <div class="block">
-          <p>FROM A</p>
-          <span>C</span>
-          <p>CONE</p>
-        </div>
-        <div class="block">
-          <p>WITH YOUR</p>
-          <span>H</span>
-          <p>HANDS</p>
-        </div>
-        <div class="block">
-          <p>ON A</p>
-          <span>S</span>
-          <p>STICK</p>
-        </div>
+        <menu-price class="block" :itemPrice="itemPrice" @newItemPrice="setPrice" @keyup.enter="submitEdits"/>
       </div>
     </div>
     <div class="menu-item-body" @dblclick="editMenu = true" @keyup.enter="submitEdits">
-      <menu-description :itemDescription="itemDescription" @newItemDescription="setDescription"/>
+      <menu-description :itemDescription="itemDescription" @newItemDescription="setDescription" @keyup.enter="submitEdits"/>
     </div>
+    <div class="removeItemBtn" @click="$emit('removeItem', item.id)"></div>
   </div>
 </template>
 
@@ -49,50 +34,57 @@ export default {
       type: Object
     }
   },
-  watch: {
-    item (newVal) {
-      console.log('item newVal', newVal)
-    },
-    itemTitle (newVal) {
-      console.log('itemTitle newVal', newVal)
-    }
+  // watch: {
+  //   item (newVal) {
+  //     console.log('item newVal', newVal)
+  //   },
+  //   itemTitle (newVal) {
+  //     console.log('itemTitle newVal', newVal)
+  //   }
+  // },
+  mounted () {
+    this.setPriceContainerHeight()
   },
   data () {
     return {
       editMenu: false,
       itemTitle: this.item.title,
       itemLocation: this.item.location,
-      itemPrice: this.item.details.price,
+      itemPrice: this.item.price,
       itemDescription: this.item.description
     }
   },
   methods: {
     setTitle (data) {
       this.itemTitle = data
+      this.submitEdits()
     },
     setLocation (data) {
       this.itemLocation = data
+      this.submitEdits()
     },
     setPrice (data) {
       this.itemPrice = data
+      this.submitEdits()
     },
     setDescription (data) {
-      console.log('setDescription data', data)
       this.itemDescription = data
+      this.submitEdits()
+    },
+    setPriceContainerHeight () {
+      let titleContainer = document.querySelector('.menu-item-title')
+      let priceContainer = document.querySelectorAll('.menu-item-details')
+      let titleContainerHeight = titleContainer.clientHeight + 'px'
+
+      priceContainer.forEach(item => item.style.height = titleContainerHeight)
     },
     submitEdits () {
       this.editMenu = false
-      // console.log('this.newMenuItems', this.newMenuItems)
-      // console.log('this.itemTitle', this.itemTitle)
       const newMenuItems = {
+        id: this.item.id,
         title: this.itemTitle,
         location: this.itemLocation,
-        details: {
-          price: this.itemPrice,
-          from: 'from a cone',
-          with: 'with your hands',
-          on: 'on a stick'
-        },
+        price: this.itemPrice,
         description: this.itemDescription
       }
       this.$emit('addedMenuItems', newMenuItems)

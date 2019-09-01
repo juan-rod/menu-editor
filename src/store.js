@@ -10,8 +10,8 @@ export default new Vuex.Store({
     errors: ''
   },
   mutations: {
-    setMenu: (state, menuItem) => {
-      state.menuItem = menuItem
+    setMenu: (state, menuItems) => {
+      state.menuItems = menuItems
     }
   },
   actions: {

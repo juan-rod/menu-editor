@@ -1,6 +1,6 @@
 <template>
   <div class="menu-home menu">
-    <nav-editor />
+    <nav-editor @createNewItem="addMenuItem(menuItemsTemp)" />
     <div class="menu-container" size="A4">
       <div class="menu-header">
         <div class="menu-header-top-border">
@@ -33,8 +33,11 @@
         <div class="menu-header-details"></div>
       </div>
       <div class="menu-body">
-        <div class="menu-item-card" v-for="(item, index) in menuItemsTemp" :key="index">
-          <menu-item :item='item' @addedMenuItems="addMenuItem" />
+        <div class="menu-item-card" v-for="(item, index) in menuItems" :key="index">
+          <menu-item 
+            :item='item'
+            @addedMenuItems="updateMenuItem"
+            @removeItem="deleteMenuItem($event)" />
         </div>
       </div>
       <div class="menu-footer"></div>
@@ -59,24 +62,16 @@ export default {
       todoEditText: '',
       dialog: false,
       dialogUpdate: false,
-      menuItemsTemp: [
-        {
-          title: 'RIPE MANGO SALAD',
-          location: "BANKOK, THAILAND| 14°5'N 90°5667'W",
-          details: {
-            price: 13,
-            from: 'from a cone',
-            with: 'with your hands',
-            on: 'on a stick'
-          },
-          description: 'poached shrimp, shredded coconut, bean sprouts, carrot, red onion, scallion, peanuts, cilantro, basil'
-        }
-      ]
+      menuItemsTemp: {
+        title: 'RIPE MANGO SALAD',
+        location: "BANKOK, THAILAND| 14°5'N 90°5667'W",
+        price: 13,
+        description: 'poached shrimp, shredded coconut, bean sprouts, carrot, red onion, scallion, peanuts, cilantro, basil'
+      }
     }
   },
   mounted () {
     this.getData()
-    console.log('this.getData()', this.getData())
   },
   directives: {
     focus: {
@@ -87,23 +82,21 @@ export default {
     }
   },
   methods: {
-    getData () {
-      this.$store.dispatch('setMenu')
+    async getData () {
+      await this.$store.dispatch('setMenu')
     },
     async addMenuItem (data) {
       console.log('addMenuItem data', data)
-      // await menuCollection.add({
-      //   title: this.newTitle,
-      //   text: this.newTodo,
-      //   createdAt: new Date()
-      // })
-        // this.getData()
-        // this.newTitle = '',
-        // this.newTodo = ''
+      await menuCollection.add({
+        ...data,
+        createdAt: new Date()
+      })
+      this.getData()
     },
-    async deleteTodo (id) {
+    async deleteMenuItem (id) {
+      console.log('deleteMenuItem id', id)
       await menuCollection.doc(id).delete()
-        this.getData()
+      this.getData()
     },
     editTodo (todo) {
       this.dialogUpdate = true
@@ -111,15 +104,11 @@ export default {
       this.todoEditText = todo.text
       this.todoEditTitle = todo.title
     },
-    async updateTodoText () {
-      await menuCollection.doc(this.currentlyEditing).update({
-        text: this.todoEditText,
-        title: this.todoEditTitle
+    async updateMenuItem (data) {
+      await menuCollection.doc(data.id).update({
+        ...data
       })
       this.getData()
-      this.currentlyEditing = null;
-      this.todoEditText = '';
-      this.todoEditTitle = '';
     }
   },
   computed: mapState([

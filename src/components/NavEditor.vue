@@ -1,10 +1,7 @@
 <template>
   <div class="nav-editor">
-    <div class="button">Add Menu Item</div>
+    <div class="button" @click="$emit('createNewItem')">Add New Menu Item</div>
     <div class="button">Add New Page</div>
-    <div class="button">Add Menu Item</div>
-    <div class="button">Add Menu Item</div>
-
   </div> 
 </template>
 

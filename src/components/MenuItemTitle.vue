@@ -30,7 +30,6 @@ export default {
    methods: {
     submitEdit () {
       this.editMenu = false
-      console.log('this.newItemTitle', this.newItemTitle)
       if (this.newItemTitle.trim().length < 1) return
       this.$emit('newItemTitle', this.newItemTitle.toUpperCase())
     }
