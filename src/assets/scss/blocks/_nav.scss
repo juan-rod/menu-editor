@@ -2,12 +2,23 @@
   display: flex;
   flex-direction: row;
   height: 100px;
-  width: 100%;
-  border: 1px solid red;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  z-index: 3;
+  @include transition;
+  i.nav-icon {
+    @include transition;
+    font-size: 32px;
+  }
+  .button-group {
+    margin: 0 14px;
+  }
   .button {
     @include btnCrisp;
+    margin-bottom: 4px;
     &:focus{
       outline: none;
     }
@@ -16,8 +27,6 @@
       @include hover;
       color: $a-gray;
       cursor: pointer;
-      // transform: translateY(-1px);
-		  // box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
     }
   }
 }

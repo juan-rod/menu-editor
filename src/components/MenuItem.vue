@@ -21,6 +21,7 @@ import MenuTitle from '@/components/MenuItemTitle'
 import MenuLocation from '@/components/MenuItemLocation'
 import MenuPrice from '@/components/MenuItemPrice'
 import MenuDescription from '@/components/MenuItemDescription'
+// import { clickOutside } from '../directives/ClickOutside';
 export default {
   name: 'menu-item',
   components : {
@@ -29,19 +30,14 @@ export default {
     MenuPrice,
     MenuDescription
   },
+  // directives: {
+  //   clickOutside
+  // },
   props: {
     item: {
       type: Object
     }
   },
-  // watch: {
-  //   item (newVal) {
-  //     console.log('item newVal', newVal)
-  //   },
-  //   itemTitle (newVal) {
-  //     console.log('itemTitle newVal', newVal)
-  //   }
-  // },
   mounted () {
     this.setPriceContainerHeight()
   },

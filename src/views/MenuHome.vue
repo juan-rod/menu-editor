@@ -1,37 +1,14 @@
 <template>
   <div class="menu-home menu">
-    <nav-editor @createNewItem="addMenuItem(menuItemsTemp)" />
+    <nav-editor 
+      @createNewItem="addMenuItem(menuItemsTemp)" 
+      @addHeader="addHeader = $event"
+      />
     <div class="menu-container" size="A4">
-      <div class="menu-header">
-        <div class="menu-header-top-border">
-          <div class="dashes">
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-            <span>\</span>
-          </div>
-          <div class="middle-box"></div>
-          <div class="dashes">
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-            <span>/</span>
-          </div>
-        </div>
-        <div class="menu-header-details"></div>
-      </div>
+      <menu-header
+        :addHeader="addHeader"
+        @addHeader="addHeader = $event"
+      />
       <div class="menu-body">
         <div class="menu-item-card" v-for="(item, index) in menuItems" :key="index">
           <menu-item 
@@ -48,20 +25,15 @@
 <script>
 import NavEditor from '@/components/NavEditor.vue'
 import MenuItem from '@/components/MenuItem.vue'
+import MenuHeader from '@/components/MenuHeader.vue'
 import { menuCollection } from '../firebase'
 import { mapState } from 'vuex'
 export default {
   name: 'menuHome',
-  components: { NavEditor, MenuItem },
+  components: { NavEditor, MenuItem, MenuHeader },
   data () {
     return {
-      newTitle: '',
-      newTodo: '',
-      currentlyEditing: null,
-      todoEditTitle: '',
-      todoEditText: '',
-      dialog: false,
-      dialogUpdate: false,
+      addHeader: true,
       menuItemsTemp: {
         title: 'RIPE MANGO SALAD',
         location: "BANKOK, THAILAND| 14°5'N 90°5667'W",
