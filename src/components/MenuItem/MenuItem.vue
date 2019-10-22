@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import MenuTitle from '@/components/MenuItemTitle'
-import MenuLocation from '@/components/MenuItemLocation'
-import MenuPrice from '@/components/MenuItemPrice'
-import MenuDescription from '@/components/MenuItemDescription'
+import MenuTitle from '@/components/MenuItem/MenuItemTitle'
+import MenuLocation from '@/components/MenuItem/MenuItemLocation'
+import MenuPrice from '@/components/MenuItem/MenuItemPrice'
+import MenuDescription from '@/components/MenuItem/MenuItemDescription'
 // import { clickOutside } from '../directives/ClickOutside';
 export default {
   name: 'menu-item',

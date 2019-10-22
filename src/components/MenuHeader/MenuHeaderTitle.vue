@@ -1,12 +1,7 @@
 <template>
   <div class="menu-header-title" v-if="addHeader">
-    <div class="title-left">
-      <editLeftTitle :item="menuHeaderItems.leftTitle" @newItem="setLeftTitle" @keyup.enter="submitHeaderEdits"/>
-      <editLeftSubTitle :item="menuHeaderItems.leftSubTitle" @newItem="setLeftSubTitle" @keyup.enter="submitEdits"/>
-    </div>
     <div class="title-right" v-if="showRightBox">
       <editRightTitle :item="menuHeaderItems.rightTitle" @newItem="setRightTitle" @keyup.enter="submitEdits"/>
-      <editRightSubTitle :item="menuHeaderItems.rightSubTitle" @newItem="setRightSubTitle" @keyup.enter="submitEdits"/>
       <div class="removeItemBtn" @click="showRightBox = false"></div>
     </div>
     <div class="removeHeaderBtn" @click="$emit('addHeader', false)"></div>
@@ -14,10 +9,7 @@
 </template>
 
 <script>
-import EditLeftTitle from '@/components/MenuHeader/MenuHeaderEditors/EditLeftTitle.vue'
-import EditLeftSubTitle from '@/components/MenuHeader/MenuHeaderEditors/EditLeftSubTitle.vue'
 import EditRightTitle from '@/components/MenuHeader/MenuHeaderEditors/EditRightTitle.vue'
-import EditRightSubTitle from '@/components/MenuHeader/MenuHeaderEditors/EditRightSubTitle.vue'
 export default {
   name: 'Menu-Header-Title',
   props: {
@@ -44,10 +36,7 @@ export default {
     }
   },
   components: {
-    EditLeftTitle,
-    EditLeftSubTitle,
-    EditRightTitle,
-    EditRightSubTitle
+    EditRightTitle
   },
   methods: {
     setLeftTitle (data) {

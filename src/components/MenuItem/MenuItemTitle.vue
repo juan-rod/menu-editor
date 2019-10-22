@@ -29,6 +29,7 @@ export default {
   },
    methods: {
     submitEdit () {
+      // make this a mixin or just utils
       this.editMenu = false
       if (this.newItemTitle.trim().length < 1) return
       this.$emit('newItemTitle', this.newItemTitle.toUpperCase())

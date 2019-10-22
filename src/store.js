@@ -23,6 +23,7 @@ export default new Vuex.Store({
         appData.id = doc.id
         menuItems.push(appData)
       })
+      console.log('STORE menuItems', menuItems)
       context.commit('setMenu', menuItems)
     }
   }

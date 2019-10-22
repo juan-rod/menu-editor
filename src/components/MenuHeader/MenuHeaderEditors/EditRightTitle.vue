@@ -11,11 +11,6 @@ export default {
   name: 'EditRightTitle',
   props: ['item'],
   mixins: [ EditFields ]
-  // watch: {
-  //   item (newVal) {
-  //     console.log('EditLeftTitle newVal', newVal)
-  //   }
-  // }
 }
 </script>
 

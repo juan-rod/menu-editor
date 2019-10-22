@@ -14,6 +14,10 @@
           <i class="fa fa-plus-circle"></i>
           <i>page</i>
         </div>
+         <div class="button"@click="$emit('printMenu')">
+          <i class="fa fa-plus-circle"></i>
+          <i>print</i>
+        </div>
       </div>
     </transition>
     <i class="fa nav-icon" 

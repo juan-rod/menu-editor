@@ -1,7 +1,7 @@
 .nav-editor {
   display: flex;
   flex-direction: row;
-  height: 100px;
+  min-height: 177px;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -12,6 +12,10 @@
   i.nav-icon {
     @include transition;
     font-size: 32px;
+          // &:hover {
+          //   @include dramaShadow;
+          // }
+    
   }
   .button-group {
     margin: 0 14px;

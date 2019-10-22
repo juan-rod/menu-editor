@@ -20,6 +20,22 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/MenuHome.vue')
+    },
+    {
+      path: '/brunch',
+      name: 'brunchMenu',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/brunchMenu.vue')
+    },
+    {
+      path: '/dinner',
+      name: 'dinnerMenu',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/dinnerMenu.vue')
     }
   ]
 })
