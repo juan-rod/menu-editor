@@ -1,6 +1,7 @@
 <template>
 <div class="wrapper" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
-  <div class="brunch-menu bootys-menu" size="A4">
+  <button @click="printMe" style="color:white; border:1px solid white;padding:2em; margin-bottom:20px">print</button>
+  <div id="nodeToRenderAsPDF" class="brunch-menu bootys-menu" size="A4">
     <div class="bootys-menu-header">
       <div class="bootys-menu-header-top-border">
         <div class="dashes">
@@ -198,8 +199,23 @@
 </template>
 
 <script>
+import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
 export default {
+  methods: {
+    printMe () {
+      const filename  = 'brunch_menu.pdf';
 
+      html2canvas(document.querySelector('#nodeToRenderAsPDF'),{ scale: 4 }).then(canvas => {
+        console.log('canvas', canvas)
+        console.log('canvas.toDataURL("image/png")', canvas.toDataURL('image/png'))
+        let pdf = new jsPDF('p', 'mm', 'a4');
+        console.log('pdf', pdf)
+        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+        pdf.save(filename);
+      });
+    }
+  }
 }
 </script>
 

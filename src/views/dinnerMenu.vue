@@ -1,6 +1,7 @@
 <template>
 <div class="wrapper" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
-  <div class="brunch-menu bootys-menu" size="A4">
+  <button @click="printMe">print</button>
+  <div id="nodeToRenderAsPDF" class="brunch-menu bootys-menu" size="A4">
     <div class="bootys-menu-header">
       <div class="bootys-menu-header-top-border">
         <div class="dashes">
@@ -64,15 +65,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Patatas Bravas</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Patatas Bravas</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>GRANADA, SPAIN | 37.17ºN, 3.59ºW</p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>8</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Crispy Potatoes, Almond Romesco, Aioli, Brava Oil </p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>8</span>
             </div>
           </div>
         </div>
@@ -81,15 +89,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Hungarian Meatballs</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Hungarian Meatballs</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>BUDAPEST, HUNGARY | 47.49ºN, 19.04ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>10</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Pork Meatballs, Rich Tomato, Herbs</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>10</span>
             </div>
           </div>
         </div>
@@ -98,15 +113,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Fried Chicken</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Fried Chicken</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>SEOUL, SOUTH KOREA | 37.56ºN, 126.97ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>12</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Fermented Rice Batter, Local Honey, Basil, Chili Flake</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>12</span>
             </div>
           </div>
         </div>
@@ -115,15 +137,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Maduros con Queso</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Maduros con Queso</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>SAO PAULO BRAZIL | 23.55ºS, 46.63ºW</p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>7</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Fried Sweet Plantains, Queso Fresco, Cilantro, TX EVOO, Lime Spice</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>7</span>
             </div>
           </div>
         </div>
@@ -132,15 +161,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Hot Dog</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Hot Dog</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>CHICAGO, USA | 41.87ºN, 87.62ºW </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>7</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Post Oak Red Hot, Mustard, Tomato, Onion, Sport Pepper, Relish, Celery Salt</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>7</span>
             </div>
           </div>
         </div>
@@ -149,15 +185,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Imperial spring Roll</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Imperial spring Roll</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>HUE, VIETNAM | 16.46ºN, 107.59ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>10</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Shrimp, Crispy Spring Roll Wrapper, Shitake Mushrooms, Carrots, Mae Ploy Sauce</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>10</span>
             </div>
           </div>
         </div>
@@ -166,15 +209,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Bratwurst</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title" >
+                    <p>Dosa</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>CHENNAI, INDIA | 13.08ºN, 80.27ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>8</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
-                <p>Beer Poached Bratwurst, House Made Sauerkraut, Whole Grain Mustard, Buttery Bun</p>
+                <p>Rice and lentil dosa, farm veggies, onions, hot sauce</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>8</span>
             </div>
           </div>
         </div>
@@ -183,15 +233,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Okonomiyaki</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title" >
+                    <p>Okonomiyaki</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>TOKYO, JAPAN | 35.67ºN, 139.65ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>10</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
                 <p>Dashi Pancake, Mayo, Bonito Flake, Fish Sauce Caramel, Veggies</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>10</span>
             </div>
           </div>
         </div>
@@ -200,15 +257,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Plantain Foster</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title">
+                    <p>Bratwurst</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>MUNICH, GERMANY | 48.13ºN, 11.58ºE </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>8</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
-                <p>Roasted Plantain, Spiced Caramel, Rum, Vanilla Ice Cream</p>
+                <p>Beer Poached Bratwurst, House Made Sauerkraut, Whole Grain Mustard, Buttery Bun</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>8</span>
             </div>
           </div>
         </div>
@@ -217,15 +281,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Cinnamon Churros</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title" >
+                    <p>Plantain Foster</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>NEW ORLEANS, USA | 29.95ºN, 90.07ºW </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>8</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
-                <p>Cinnamon Donuts, Chocolate Dip, Cinnamon Sugar (vanilla ice cream +2)</p>
+                <p>Roasted Plantain, Spiced Caramel, Rum, Vanilla Ice Cream</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>7</span>
             </div>
           </div>
         </div>
@@ -234,15 +305,22 @@
         <div class="menu-item-wrapper">
           <div class="menu-item-header dinner">
             <div class="dinner-menu-item-body">
-              <div class="dinner-menu-item-title" >
-                <p>Dosa</p>
+              <div class="dinner-menu-item-body-top">
+                <div class="top-wrapper">
+                  <div class="dinner-menu-item-title" >
+                    <p>Cinnamon Churros</p>
+                  </div>
+                  <div class="dinner-menu-item-location">
+                    <p>MEXICO CITY, MEXICO | 19.43ºN, 99.13ºW </p>
+                  </div>
+                </div>
+                <div class="dinner-menu-item-price">
+                  <span>7</span>
+                </div>
               </div>
               <div class="dinner-menu-item-description" >
-                <p>Rice and lentil dosa, farm veggies, onions, hot sauce</p>
+                <p>Cinnamon Donuts, Chocolate Dip, Cinnamon Sugar (vanilla ice cream +2)</p>
               </div>
-            </div>
-            <div class="dinner-menu-item-price">
-              <span>8</span>
             </div>
           </div>
         </div>
@@ -253,8 +331,37 @@
 </template>
 
 <script>
-export default {
+import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
 
+export default {
+methods: {
+  // printMe () {
+  //   function print() {
+	// 	const filename  = 'ThisIsYourPDFFilename.pdf';
+
+	// 	html2canvas(document.querySelector('#nodeToRenderAsPDF')).then(canvas => {
+	// 		let pdf = new jsPDF('p', 'mm', 'a4');
+	// 		pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+	// 		pdf.save(filename);
+	// 	});
+	// }
+
+  // Variant
+  // This one lets you improve the PDF sharpness by scaling up the HTML node tree to render as an image before getting pasted on the PDF.
+  printMe (quality = 1) {
+      const filename  = 'ThisIsYourPDFFilename.pdf';
+
+      html2canvas(document.querySelector('#nodeToRenderAsPDF')).then(canvas => {
+        console.log('canvas', canvas)
+        console.log('canvas.toDataURL("image/png")', canvas.toDataURL('image/png'))
+        let pdf = new jsPDF('p', 'mm', 'a4');
+        console.log('pdf', pdf)
+        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
+        pdf.save(filename);
+      });
+    }
+  }
 }
 </script>
 
