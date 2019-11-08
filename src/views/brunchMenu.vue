@@ -202,6 +202,12 @@
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 export default {
+  mounted () {
+    var scale = "Your screen resolution is: " + window.screen.width * window.devicePixelRatio + "x" + window.screen.height * window.devicePixelRatio
+    console.log('scale', scale)
+    var sx = document.querySelector('#nodeToRenderAsPDF').offsetHeight
+    console.log('sx', sx)
+  },
   methods: {
     printMe () {
       const filename  = 'brunch_menu.pdf';

@@ -1,0 +1,20 @@
+.home-container {
+  height: 100%;
+  @include flexRowCenter;
+  .inner-container {
+    @include flexRowSpaceEvenly;
+    @include border;
+    width: 100%;
+    .block {
+      height: 200px;
+      width: 200px;
+      @include border1;
+      @include flexRowCenter;
+      &.block-menu {
+        @include flexColumnCenter;
+        justify-content: space-evenly;
+
+      }
+    }
+  }
+}

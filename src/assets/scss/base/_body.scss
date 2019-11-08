@@ -1,9 +1,5 @@
 body {
-  // @extend %txt--body;
   color: cc(dark);
-//   background-color: cc(secondary);
-  // padding: 1.3em;
-  
   ::selection {
     background-color: cc(selection);
   }
@@ -25,6 +21,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: linear-gradient(-160deg, #13547A 0%, #80D0C7 100%);
+    min-height: 100vh;
+    height: 100%;
   }
   #nav {
     padding: 30px;
