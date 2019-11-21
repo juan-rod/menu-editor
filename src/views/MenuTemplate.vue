@@ -5,7 +5,7 @@
       @printMenu="printMenu" />
     <div id="nodeToRenderAsPDF" class="menu-template" :class="{ 'scaleForPrint':  scaleForPrint}" size="A4">
       <!-- <img src="../../dist/images/Bootys_BRUNCH_Menu-10-25.png" alt=""> -->
-      <menu-header></menu-header>
+      <menu-header :headerTitle="headerTitle"></menu-header>
       <menu-body
         :menuItems="menuItems">
       </menu-body>
@@ -14,16 +14,17 @@
 </template>
 
 <script>
-import MenuEditor from '@/components2/MenuEditor.vue'
-import MenuBody from '@/components2/MenuBody/MenuBody.vue'
-import MenuHeader from '@/components2/MenuHeader.vue'
+import MenuEditor from '@/components/MenuEditor.vue'
+import MenuBody from '@/components/MenuBody/MenuBody.vue'
+import MenuHeader from '@/components/MenuHeader.vue'
 import { menuCollection } from '../firebase'
 import { mapState } from 'vuex'
 import { printMenu as print } from '@/utils/print'
+import { router } from '../router'
 // import jsPDF from 'jspdf'
 // import html2canvas from 'html2canvas'
 export default {
-  name: 'menuTemplate',
+  name: 'MenuTemplate',
   components: { MenuBody, MenuHeader, MenuEditor },
   data () {
     return {
@@ -44,10 +45,7 @@ export default {
       await this.$store.dispatch('setMenu')
     },
     async createNewItem () {
-      console.log('this.menuItems', this.menuItems)
       if (this.menuItemLimit()) {
-      console.log('this.menuItem + 1 > 9', this.menuItems.length + 1 >= 9)
-        console.log('hey from true',)
         window.alert('can not add more than 9 per page')
         return
       }
@@ -62,18 +60,6 @@ export default {
     },
     printMenu () {
       this.scaleForPrint = true
-      console.log('hello from print')
-      // const pageToPrint = document.querySelector('#nodeToRenderAsPDF')
-      // let pageToPrintWidth = pageToPrint.clientWidth
-      // let pageToPrintHeight = pageToPrint.clientHeight
-      // pageToPrintWidth = (pageToPrintWidth * 2.54) / 96
-      // pageToPrintHeight = (pageToPrintHeight * 2.54) / 96
-      // console.log('1. pageToPrintWidth', pageToPrintWidth)
-      // console.log('pageToPrintHeight', pageToPrintHeight)
-      // pageToPrintWidth = pageToPrintWidth * 3
-      // pageToPrintHeight = pageToPrintHeight * 3
-      // console.log('2. pageToPrintWidth', pageToPrintWidth)
-      // console.log('pageToPrintHeight', pageToPrintHeight)
       print()
     },
     handleChanged (delta) {
@@ -81,12 +67,18 @@ export default {
     }
   },
   created () {
-    browser.downloads.onChanged.addListener(this.handleChanged)
-    browser.downloads.onChanged.removeListener(listener)
+    // browser.downloads.onChanged.addListener(this.handleChanged)
+    // browser.downloads.onChanged.removeListener(listener)
   },
-  computed: mapState([
-    'menuItems'
-  ])
+  computed: {
+    headerTitle () {
+      console.log('this.$route', this.$route)
+      return this.$route.params.id
+    }, 
+    ...mapState([
+      'menuItems'
+    ])
+  }
 }
 </script>
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import MenuItem from '@/components2/MenuBody/MenuItem.vue'
+import MenuItem from '@/components/MenuBody/MenuItem.vue'
 import { menuCollection } from '../../firebase'
 export default {
   name: 'MenuBody',

@@ -7,21 +7,13 @@ export function printMenu  () {
   const filename  = `brunch_menu_${random}_${today}.pdf`;
 
   const pageToPrint = document.querySelector('#nodeToRenderAsPDF')
-  // const pageToPrintWidth = pageToPrint.clientHeight
-  // const pageToPrintHeight = pageToPrint.clientHeight
-  // console.log('pageToPrintWidth', pageToPrintWidth)
-  // console.log('pageToPrintHeight', pageToPrintHeight)
-  getPageSize(pageToPrint)
+  // this crashes the browser...
+  // getPageSize(pageToPrint)
   
   html2canvas(pageToPrint,{ scale: 4 }).then(canvas => {
-    let pdf = new jsPDF('p', 'cm', 'a4');
-    console.log('pdf', pdf)
-    // getPageSize(pageToPrint)
-    
-    const width = 15.53
-    const height = 29.7
-    // 21cm x 29.7cm
-    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 2.73, 0, 15.53, 29.7);
+    let pdf = new jsPDF('p', 'cm', 'a4')
+
+    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 2.73, 0, 15.53, 29.7)
     pdf.save(filename);
   });
 }

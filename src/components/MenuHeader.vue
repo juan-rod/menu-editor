@@ -29,7 +29,7 @@
     </div>
     <div class="menu-header-title">
       <div class="title-label-container">
-        <p class="right-title">Brunch</p>
+        <p class="right-title">{{ headerTitle }}</p>
       </div>
         <!-- <div class="title-label-container edit-hover" @dblclick="editItem = true" @keyup.enter="submitEdit">
           <p class="right-title" v-if="!editItem">{{ item }}</p>
@@ -42,7 +42,8 @@
 <script>
 // import EditFields from '@/mixins/EditFields'
 export default {
-  name: 'MenuHeader'
+  name: 'MenuHeader',
+  props: ['headerTitle']
 }
 </script>
 

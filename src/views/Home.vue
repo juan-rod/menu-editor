@@ -5,10 +5,10 @@
        <p>Menus</p>
        <div class="menu-list" v-if="menuClicked">
          <ul>
-           <router-link to="/brunch" tag="li">Brunch</router-link>
-           <router-link to="/dinner" tag="li">Dinner</router-link>
-           <router-link to="/cocktails" tag="li">Cocktails</router-link>
-           <router-link to="/inserts" tag="li">Inserts</router-link>
+           <router-link to="/menu/brunch" tag="li">Brunch</router-link>
+           <router-link to="/menu/dinner" tag="li">Dinner</router-link>
+           <router-link to="/menu/cocktails" tag="li">Cocktails</router-link>
+           <router-link to="/menu/inserts" tag="li">Inserts</router-link>
          </ul>
        </div>
      </div>
@@ -30,6 +30,13 @@ export default {
     return {
       menuClicked: false
     }
-  }
+  },
+  watch: {
+    $route(to, from) {
+      console.log('to', to)
+      console.log('from', from)
+      // react to route changes...
+    }
+  },
 }
 </script>

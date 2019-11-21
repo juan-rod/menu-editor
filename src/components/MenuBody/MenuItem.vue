@@ -29,7 +29,7 @@
 
 <script>
 import { menuCollection } from '../../firebase'
-import MenuItemComponent from '@/components2/MenuBody/MenuItemComponent'
+import MenuItemComponent from '@/components/MenuBody/MenuItemComponent'
 export default {
   name: 'MenuItem',
   props: ['item'],
