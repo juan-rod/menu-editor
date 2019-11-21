@@ -11,6 +11,9 @@
     &.scaleForPrint {
       transform: scale(3,3);
       transform-origin: 0 0;
+      .menu-body .menu-item-card .menu-item .edit-hover {
+        display: none;
+      }
     }
     // padding: 20px 40px;
     position: relative;
