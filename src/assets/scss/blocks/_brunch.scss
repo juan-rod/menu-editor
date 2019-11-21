@@ -11,9 +11,20 @@
     box-shadow: 6px 8px 5px 0px rgba(121, 120, 120, 0.2);
     padding: 20px 40px;
   }
+  .wrapper {
+    position: relative;
+  }
+  .wrapper img {
+    position: absolute;
+    z-index: 1;
+    margin: 148px -3px;
+    opacity: 0.5;
+  }
   .bootys-menu[size="A4"] {  
-    width: 15.75cm;
-    height: auto;
+    // width: 15.75cm;
+    // height: auto;
+    width: 21.0cm;
+    height: 29.7cm;
   }
   .bootys-menu-header {
       width: 100%;

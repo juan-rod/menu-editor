@@ -7,6 +7,9 @@
 @mixin border2 {
   border: 1px solid blue;
 }
+@mixin border3 {
+  border: 1px solid green;
+}
 
 @mixin flexColumn {
   display: flex;

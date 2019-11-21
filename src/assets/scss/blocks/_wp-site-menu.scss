@@ -1,4 +1,13 @@
 // #post-36 .entry-content .wrapper .bootys-menu {
+  .wrapper {
+    position: relative;
+  }
+  .wrapper img {
+    position: absolute;
+    z-index: 1;
+    margin: 148px -3px;
+    opacity: 0.5;
+  }
 .bootys-menu {
     background-color: white;
     display: flex;
@@ -8,8 +17,15 @@
     padding: 20px 40px;
   }
   .bootys-menu[size="A4"] {  
-    width: 15.75cm;
-    height: auto;
+    // width: 15.75cm;
+    // height: auto;
+    width: 21.0cm;
+    height: 29.7cm;
+    // height: 297mm;
+    // width: 210mm;
+    padding: 2cm;
+    // width: 396px;
+    // height: 757px;
   }
   .bootys-menu-header {
       width: 100%;

@@ -1,6 +1,8 @@
 <template>
 <div class="wrapper" style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
   <button @click="printMe" style="color:white; border:1px solid white;padding:2em; margin-bottom:20px">print</button>
+  <!-- <a href="src/assets/images/Bootys_BRUNCH_Menu-10-25.pdf"></a> -->
+  <img src="../../dist/images/Bootys_BRUNCH_Menu-10-25.png" alt="">
   <div id="nodeToRenderAsPDF" class="brunch-menu bootys-menu" size="A4">
     <div class="bootys-menu-header">
       <div class="bootys-menu-header-top-border">
@@ -210,7 +212,13 @@ export default {
   },
   methods: {
     printMe () {
-      const filename  = 'brunch_menu.pdf';
+      let today = this.getDate()
+
+      console.log(today)
+      let random = this.getRandomInt(0, 2000)
+      console.log('random', random)
+      const filename  = `brunch_menu_${random}_${today}.pdf`;
+      console.log('filename', filename)
 
       html2canvas(document.querySelector('#nodeToRenderAsPDF'),{ scale: 4 }).then(canvas => {
         console.log('canvas', canvas)
@@ -220,6 +228,12 @@ export default {
         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
         pdf.save(filename);
       });
+    },
+    getDate () {
+      return new Date().toISOString().slice(0, 10)
+    },
+    getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
     }
   }
 }

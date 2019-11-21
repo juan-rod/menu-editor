@@ -1,4 +1,4 @@
-.nav-editor {
+.menu-editor {
   display: flex;
   flex-direction: row;
   min-height: 177px;
@@ -9,7 +9,7 @@
   left: 0;
   z-index: 3;
   @include transition;
-  i.nav-icon {
+  i.menu-icon {
     @include transition;
     font-size: 32px;
           // &:hover {

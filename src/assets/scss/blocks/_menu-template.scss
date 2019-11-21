@@ -1,0 +1,42 @@
+.menu-template-container {
+  @include flexColumnCenter;
+  height: 100%;
+  padding: 3em 0;
+  .menu-template {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(220, 220, 220);
+    box-shadow: 6px 8px 5px 0px rgba(121, 120, 120, 0.2);
+    &.scaleForPrint {
+      transform: scale(3,3);
+      transform-origin: 0 0;
+    }
+    // padding: 20px 40px;
+    position: relative;
+    &[size="A4"] {
+      width: 15.53cm;
+      // width: 21.0cm;
+      height: 29.7cm;
+      padding: 24px;
+      img {
+        position: absolute;
+        // width: 21.0cm;
+        height: 29.7cm;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: .8;
+      }
+    }
+    .menu-header {
+      // see _menu-template-header.scss
+    }
+    .menu-body {
+      // see _menu-template-header.scss
+    }
+    .menu-footer {
+      // see _menu-template-footer.scss
+    }
+  }
+}

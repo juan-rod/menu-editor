@@ -1,0 +1,74 @@
+.menu-body {
+  flex: 1;
+  .menu-item-card {
+    border: 2px solid black;
+    min-height: 56px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    .menu-item {
+      height: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      .edit-hover:hover {
+        cursor: pointer;
+        background: cc(input, .2);
+      }
+      &-description {
+        // @include border3;
+        height: auto;
+        flex: 2;
+        border-right: 2px solid cc(dark);
+        display: flex;
+        flex-direction: column;
+      }
+      &-price {
+        // @include border3;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+      }
+      &-title,
+      &-details {
+        padding: 4px 0 1px 10px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        color: cc(dark);
+      }
+      &-title {
+        border-bottom: 1px dotted cc(dark);
+        text-transform: uppercase;
+        p {
+          font-size: 18px;
+          line-height: 1.4;
+        }
+      }
+      &-location {
+        border-top: 1px dotted cc(dark);
+        font-size: 20px;
+        color: #4c4e4d;
+      }
+      &-details {
+        text-transform: lowercase;
+        padding-bottom: 4px;
+        p {
+          font-size: 12px;
+        }
+      }
+      .removeItemBtn {
+        @include removeBtn;
+      }
+      &:hover {
+        .removeItemBtn {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

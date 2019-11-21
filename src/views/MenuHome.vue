@@ -14,7 +14,7 @@
         @addedMenuHeaderItems="addHeaderItems"
       />
       <div class="menu-body">
-        <div class="menu-item-card" v-for="(item, index) in menuItems" :key="item.id">
+        <div class="menu-item-card" v-for="(item) in menuItems" :key="item.id">
           <menu-item 
             :item='item'
             @addedMenuItems="updateMenuItem"
@@ -84,10 +84,6 @@ export default {
         pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
         pdf.save(filename);
       });
-    },
-    async getData () {
-      console.log("this.$store.dispatch('setMenu')", this.$store.dispatch('setMenu'))
-      await this.$store.dispatch('setMenu')
     },
     async addMenuItem (data) {
       console.log('addMenuItem data', data)
