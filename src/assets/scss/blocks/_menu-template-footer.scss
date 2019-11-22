@@ -1,0 +1,7 @@
+.menu-footer {
+  flex: 1;
+  @include flexRowCenter;
+  & img {
+    width: 80%;
+  }
+}

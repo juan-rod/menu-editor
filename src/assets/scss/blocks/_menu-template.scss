@@ -2,6 +2,14 @@
   @include flexColumnCenter;
   height: 100%;
   padding: 3em 0;
+  .hide-print {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
   .menu-template {
     background-color: white;
     display: flex;
@@ -22,7 +30,7 @@
       // width: 21.0cm;
       height: 29.7cm;
       padding: 24px;
-      img {
+      img.test-menu {
         position: absolute;
         // width: 21.0cm;
         height: 29.7cm;
