@@ -1,34 +1,64 @@
 <template>
-  <div class="home-container">
-   <div class="inner-container">
-     <div class="block block-item" :class='{"block-menu" : menuClicked}' @click="menuClicked=!menuClicked">
-       <p>Menus</p>
-       <div class="menu-list" v-if="menuClicked">
-         <ul>
-           <router-link to="/menu/brunch" tag="li">Brunch</router-link>
-           <router-link to="/menu/dinner" tag="li">Dinner</router-link>
-           <router-link to="/menu/cocktails" tag="li">Cocktails</router-link>
-           <router-link to="/menu/inserts" tag="li">Inserts</router-link>
-         </ul>
-       </div>
-     </div>
-     <div class="block block-item">
-       <router-link to="/event-posters" tag="p">Event Posters</router-link>
-     </div>
-   </div>
+  <div class="home-container-wrapper">
+    <div class="home-container" :class="{ 'show-tools': showTools }">
+      <aside class="sidebar-container">
+        <div class="sidebar">
+          <div class="logo">LOGO</div>
+          <section class="section-1">
+            <h2>Menu</h2>
+            <ul>
+              <li>Start New</li>
+              <li>Previous Brunch</li>
+              <li>Previous Dinner</li>
+            </ul>
+          </section>
+          <section class="section-2">
+            <h2>Poster</h2>
+            <ul>
+              <li>Start New</li>
+              <li>Previous Posters</li>
+              <!-- <li>Previous Dinner</li> -->
+            </ul>
+          </section>
+          <section class="section-3">
+            <i class="fa fa-lg fa-cog"></i>
+          </section>
+        </div>
+      </aside>
+      <!-- <nav class="nav"></nav> -->
+      <main>
+        <div class="main-content">
+          <div class="toolbar">
+            <i class="tools-btn" @click="openTools">Tools</i>
+          </div>
+        </div>
+        <menu-template></menu-template>
+      </main>
+    </div>
+    <div class="side-tool-bar">
+      <ul>
+        <li>New Page</li>
+        <li>Add Item</li>
+        <li>Download</li>
+        <li>Save</li>
+      </ul>
+
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-
+import MenuTemplate from '@/views/MenuTemplate.vue'
 export default {
   name: 'home',
-  components: {},
+  components: { MenuTemplate },
   data () {
     return {
-      menuClicked: false
+      menuClicked: false,
+      showTools: false,
+      moveTools: false
     }
   },
   watch: {
@@ -38,5 +68,16 @@ export default {
       // react to route changes...
     }
   },
+  methods: {
+    openTools () {
+      this.showTools = !this.showTools
+      setTimeout(() => {
+        this.moveTools = !this.moveTools
+        if (!this.showTools) {
+          return
+        }
+      }, 1000);
+    }
+  }
 }
 </script>

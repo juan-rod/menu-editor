@@ -1,7 +1,8 @@
 body {
   color: cc(dark);
   ::selection {
-    background-color: cc(selection);
+    // background-color: cc(selection);
+    // background-color: $coral-red;
   }
   .border{
     border:1px solid black;
@@ -20,7 +21,8 @@ body {
     // font-family: 'Albertsthal-Typewriter', Albertsthal-Typewriter;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: linear-gradient(-160deg, #13547A 0%, #80D0C7 100%);
+    background-color: $sasquatch-socks;
+    // background-image: linear-gradient(-160deg, #13547A 0%, #80D0C7 100%);
     min-height: 100vh;
     height: 100%;
   }

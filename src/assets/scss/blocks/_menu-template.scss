@@ -1,7 +1,8 @@
 .menu-template-container {
   @include flexColumnCenter;
-  height: 100%;
-  padding: 3em 0;
+  // height: calc(100vh - 100px);
+  // overflow: scroll;
+  padding: 0 0 3em;
   .hide-print {
     height: 100%;
     width: 100%;

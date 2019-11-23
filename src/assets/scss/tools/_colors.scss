@@ -15,21 +15,28 @@ $a-deep-red:#7b0d08;
 $a-nother-green:#b0a976;
 $bootys-red: #be1e2d;
 $input-bg: rgba(56, 129, 151, 1);
+$bdazzle-blue: #385692;
+$bright-lime: #75FF8F;
+$red-salsa: #F03A47;
+$sasquatch-socks:#FF4D80;
+$coral-red: #FF3E41;
 
 // cc map
 $colors:(
   default:(
     b-red: $bootys-red,
-    txt: $smoky-black,
+    // txt: $smoky-black,
+    txt: $bright-lime,
     dark: $a-black,
     input: $input-bg,
-    bg: $projector-blue,
+    // bg: $projector-blue,
+    bg: $bdazzle-blue,
     primary: $a-red,
     secondary: $a-pink,
     third: $a-green,
     shadow: $smoky-black,
     overlay: $dark-gray-blue,
-    selection: rgba($dark-gray-blue, .33),
+    selection: $sasquatch-socks,
     ghost: $ghost-white,
     one:$a-nother-red,
     two:$a-beige,
@@ -46,3 +53,4 @@ $colors:(
   //   txt: $ghost-white
   // )
 );
+

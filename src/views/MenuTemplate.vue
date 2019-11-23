@@ -1,9 +1,9 @@
 <template>
   <div class="menu-template-container">
     <div :class="{'hide-print': scaleForPrint}"></div>
-    <menu-editor
+    <!-- <menu-editor
       @createNewItem="createNewItem"
-      @printMenu="printMenu" />
+      @printMenu="printMenu" /> -->
     <div id="nodeToRenderAsPDF" class="menu-template" :class="{ 'scaleForPrint':  scaleForPrint}" size="A4">
       <!-- <img class="test-menu" src="../../dist/images/Bootys_BRUNCH_Menu-10-25.png" alt=""> -->
       <menu-header :headerTitle="headerTitle"></menu-header>
