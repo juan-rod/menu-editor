@@ -2,33 +2,11 @@
   height: 100%;
   width:100%;
   background-color: cc(selection);
-  .side-tool-bar {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    @include flexColumn;
-    width: 8em;
-    height: auto;
-    @extend %txt--subtitle;
-    ul {
-      @include flexColumnFlexStart;
-      padding: 0 0 0 20px;
-      li {
-        color: cc(txt);
-        @extend %txt--subtitle;
-        padding: 0 0 8px;
-        cursor: pointer;
-        @include transition;
-      }
-    }
-  }
 }
 .home-container {
-  // @include border;
   height: 100%;
   width:100%;
-  @include flexRowFlexStart;
-  align-items: flex-start;
+  @include flexColumnCenter;
   background: cc(bg);
   color: cc(txt);
   padding: 40px 40px 0;
@@ -38,105 +16,11 @@
 
   &.show-tools {
     transform: translateX(-8em);
+    // @include btnBoxShadow;
+    box-shadow: 5px 0px 5px 0 rgba(49, 49, 93, 0.1), 4px 6px 2px 0 rgba(0, 0, 0, 0.08);
   }
-}
-aside, nav, main {
-  height: 100%;
-  width:100%;
-}
-aside {
-  // @include border2;
-  flex:1;
-  padding: 0 0 40px 0;
-  .sidebar {
-    // @include border3;
-    height: 100%;
-    @include flexColumn;
-    .logo {
-      // @include border1;
-      height: 60px;
-      @include flexRowFlexStart;
-    }
-    section {
-      
-      @include flexColumn;
-      h2 {
-        margin: 20px 0;
-        @extend %txt--title;
-        display: inline-block;
-      }
-      ul {
-        @include flexColumn;
-      }
-      ul li {
-        display: inline-block;
-        @extend %txt--subtitle;
-        padding: 0 0 8px;
-        cursor: pointer;
-        @include transition; 
-        
-        &:hover, &:active, &:focus {
-          transform: scale(1.18);
-        }
-      }
-      &.section-3 {
-        @include flexColumn;
-        flex: 1;
-        justify-content: flex-end;
-        // margin-top: 274px;
-        i {
-          font-size: 40px;
-          color: cc(txt, .65);
-          cursor: pointer;
-          @include transition; 
-
-          &:hover, &:active, &:focus {
-            color: cc(txt);
-          }
-        }
-      }
-    }
+  &.container-right {
+    transform: translateX(10em);
+    box-shadow: 5px 0px 5px 0 rgba(49, 49, 93, 0.1), 4px 6px 2px 0 rgba(0, 0, 0, 0.08);
   }
-  
-}
-main {
-  // @include border1;
-  flex:3;
-  .main-content {
-    // @include border2;
-    // margin: 60px 0 0;
-    
-    .toolbar {
-      height: 60px;
-      @include flexRowFlexEnd;
-      ul {
-        @include flexRow;
-      }
-      ul li {
-        display: inline-block;
-        @extend %txt--body;
-        padding: 0 26px 0;
-        cursor: pointer;
-        @include transition; 
-        
-        &:hover, &:active, &:focus {
-          transform: scale(1.18);
-        }
-      }
-      i {
-        @extend %txt--body;
-        cursor: pointer;
-        text-transform: uppercase;
-        @include transition; 
-        
-        &:hover, &:active, &:focus {
-          transform: scale(1.18);
-        }
-      }
-    }
-  }
-}
-nav {
-  
-  @include border3;
 }

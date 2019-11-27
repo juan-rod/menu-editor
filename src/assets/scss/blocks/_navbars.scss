@@ -1,0 +1,115 @@
+// TOP BAR
+
+.home-container-wrapper {
+  height: 100%;
+  width:100%;
+  background-color: cc(selection);
+  // @include flexColumnCenter;
+  
+  // BOTTOM BAR
+  #bottom-bar, #top-bar {
+    position: fixed;
+    width: calc(100% - 80px);
+    height: 40px;
+    @include flexRowSpaceBetween;
+    svg {
+      color: cc(ghost, .5);
+      width: 20px;
+      @include transition;
+      &:hover {
+        cursor: pointer;
+        color: cc(ghost);
+      }
+    }
+  }
+  #bottom-bar {
+    bottom: 0;
+    height: 40px;
+  }
+  // TOP BAR
+  #top-bar {
+    align-items: flex-end;
+    top: 40px;
+  }
+
+
+  // TOOL BAR
+  #side-tool-bar {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    @include flexColumn;
+    width: 8em;
+    height: auto;
+    @extend %txt--subtitle;
+    ul {
+      @include flexColumnFlexStart;
+      padding: 0 0 0 20px;
+      li {
+        color: cc(txt);
+        @extend %txt--subtitle;
+        padding: 0 0 8px;
+        cursor: pointer;
+        @include transition;
+      }
+    }
+  }
+// SIDEBAR
+  aside#side-bar {
+    position: fixed;
+    flex:1;
+    padding: 0 0 40px 0;
+    .sidebar {
+      height: 600px;
+      @include flexColumn;
+      .logo {
+        height: 60px;
+        @include flexRowFlexStart;
+      }
+      section {
+        @include flexColumn;
+        h2 {
+          margin: 20px 0;
+          @extend %txt--title;
+          display: inline-block;
+        }
+        ul {
+          @include flexColumn;
+        }
+        ul li {
+          display: inline-block;
+          @extend %txt--subtitle;
+          padding: 0 0 8px;
+          cursor: pointer;
+          @include transition; 
+          
+          &:hover, &:active, &:focus {
+            transform: scale(1.18);
+            &:after {
+              content: '';
+              position: relative;
+              width: 100px;
+              height: 20px;
+              color: $coral-red;
+            }
+          }
+        }
+        &.section-3 {
+          @include flexColumn;
+          flex: 1;
+          justify-content: flex-end;
+          i {
+            font-size: 40px;
+            color: cc(txt, .65);
+            cursor: pointer;
+            @include transition; 
+  
+            &:hover, &:active, &:focus {
+              color: cc(txt);
+            }
+          }
+        }
+      }
+    }
+  }
+}

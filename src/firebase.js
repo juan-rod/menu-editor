@@ -12,4 +12,5 @@ const app = initializeApp({
 });
 
 export const db = app.firestore();
+export const Auth = app.auth();
 export const menuCollection = db.collection('menu');

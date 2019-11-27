@@ -1,8 +1,10 @@
 .menu-template-container {
   @include flexColumnCenter;
+  font-family: 'artisan12', Helvetica, Arial, sans-serif;
   // height: calc(100vh - 100px);
   // overflow: scroll;
   padding: 0 0 3em;
+  margin-top: 40px;
   .hide-print {
     height: 100%;
     width: 100%;

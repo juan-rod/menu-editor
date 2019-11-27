@@ -17,7 +17,8 @@ body {
     border:1px solid black;
   }
   #app {
-    font-family: 'artisan12', Helvetica, Arial, sans-serif;
+    @extend %txt--body;
+    // font-family: 'artisan12', Helvetica, Arial, sans-serif;
     // font-family: 'Albertsthal-Typewriter', Albertsthal-Typewriter;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

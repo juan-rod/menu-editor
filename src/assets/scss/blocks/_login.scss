@@ -1,0 +1,61 @@
+.login-container {
+  @include flexColumnStartCenter;
+  height: 100vh;
+  width: 100%;
+  padding-left: 100px;
+  background-image: url('https://source.unsplash.com/featured/?cactus,sunset');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .login {
+    height: 550px;
+    width: 400px;
+    @include flexColumn;
+    justify-content: flex-start;
+    background-color: $ghost-white;
+    padding: 80px 20px 20px;
+    // @include border;
+    &-header {
+      // @include border2;
+      // flex:1;
+      h1 {
+        font-size: 1.4em;
+        text-transform: uppercase;
+        @extend %txt--title;
+      }
+    }
+    &-body {
+      margin-top: 16px;
+      .login-form, .register-form {
+        @include flexColumn;
+        input {
+          border: 1px solid black;
+          height: 45px;
+          margin-bottom: 1em;
+          padding: 0 20px;
+        }
+        button {
+          @include btnCrisp;
+        }
+
+      }
+      h1 {
+        text-transform: uppercase;
+        font-size: 1.4em;
+        margin: 16px 0;
+      }
+      // flex:2;
+      @include flexColumn;
+      // @include border2;
+    }
+    &-footer {
+      @include flexRow;
+      margin: 20px 0;
+      justify-content: space-between;
+      .register-btn {
+        &:hover {
+          color: $coral-red;
+        }
+      }
+    }
+  }
+}

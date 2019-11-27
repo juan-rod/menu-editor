@@ -1,9 +1,6 @@
 <template>
   <div class="menu-template-container">
     <div :class="{'hide-print': scaleForPrint}"></div>
-    <!-- <menu-editor
-      @createNewItem="createNewItem"
-      @printMenu="printMenu" /> -->
     <div id="nodeToRenderAsPDF" class="menu-template" :class="{ 'scaleForPrint':  scaleForPrint}" size="A4">
       <!-- <img class="test-menu" src="../../dist/images/Bootys_BRUNCH_Menu-10-25.png" alt=""> -->
       <menu-header :headerTitle="headerTitle"></menu-header>
@@ -20,7 +17,7 @@ import MenuEditor from '@/components/MenuEditor.vue'
 import MenuBody from '@/components/MenuBody/MenuBody.vue'
 import MenuHeader from '@/components/MenuHeader.vue'
 import MenuFooter from '@/components/MenuFooter.vue'
-import { menuCollection } from '../firebase'
+import { menuCollection } from '@/firebase'
 import { mapState } from 'vuex'
 import { printMenu as print } from '@/utils/print'
 export default {
@@ -65,7 +62,7 @@ export default {
   },
   computed: {
     headerTitle () {
-      return this.$route.params.id
+      return this.$route.params.id ? this.$route.params.id : 'Brunch'
     }, 
     ...mapState([
       'menuItems'

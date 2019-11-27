@@ -13,6 +13,10 @@
       display: flex;
       flex-direction: row;
       position: relative;
+      input {
+        width: 100%;
+        height: 100%;
+      }
       .edit-hover:hover {
         cursor: pointer;
         background: cc(input, .2);
