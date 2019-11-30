@@ -40,6 +40,7 @@ export default {
   methods: {
     async getData () {
       await this.$store.dispatch('setMenu')
+      await this.$store.dispatch('setMenus')
     },
     async createNewItem () {
       if (this.menuItemLimit()) {
@@ -65,7 +66,8 @@ export default {
       return this.$route.params.id ? this.$route.params.id : 'Brunch'
     }, 
     ...mapState([
-      'menuItems'
+      'menuItems',
+      'menus'
     ])
   }
 }

@@ -5,21 +5,18 @@
       <section class="section-1">
         <h2>Menu</h2>
         <ul>
-          <li>Start New</li>
-          <li>Previous Brunch</li>
-          <li>Previous Dinner</li>
+          <li>New</li>
+          <li>Edit Brunch</li>
+          <li>Edit Dinner</li>
         </ul>
       </section>
       <section class="section-2">
         <h2>Poster</h2>
         <ul>
-          <li>Start New</li>
-          <li>Previous Posters</li>
+          <li>New</li>
+          <li>Edit</li>
           <!-- <li>Previous Dinner</li> -->
         </ul>
-      </section>
-      <section class="section-3">
-        <i class="fa fa-lg fa-cog"></i>
       </section>
     </div>
   </aside>

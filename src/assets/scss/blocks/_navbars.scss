@@ -23,7 +23,7 @@
     }
   }
   #bottom-bar {
-    bottom: 0;
+    bottom: 10px;
     height: 40px;
   }
   // TOP BAR
@@ -46,11 +46,15 @@
       @include flexColumnFlexStart;
       padding: 0 0 0 20px;
       li {
-        color: cc(txt);
+        color: cc(txt, .8);
         @extend %txt--subtitle;
         padding: 0 0 8px;
         cursor: pointer;
         @include transition;
+        &:hover, &:active, &:focus {
+          // transform: scale(1.18);
+          color: cc(txt, 1);
+        }
       }
     }
   }
@@ -62,6 +66,7 @@
     .sidebar {
       height: 600px;
       @include flexColumn;
+      padding: 0 0 0 20px;
       .logo {
         height: 60px;
         @include flexRowFlexStart;
@@ -69,6 +74,7 @@
       section {
         @include flexColumn;
         h2 {
+          color: cc(txt);
           margin: 20px 0;
           @extend %txt--title;
           display: inline-block;
@@ -77,6 +83,7 @@
           @include flexColumn;
         }
         ul li {
+          color: cc(txt, .8);
           display: inline-block;
           @extend %txt--subtitle;
           padding: 0 0 8px;
@@ -84,28 +91,14 @@
           @include transition; 
           
           &:hover, &:active, &:focus {
-            transform: scale(1.18);
+            // transform: scale(1.18);
+            color: cc(txt, 1);
             &:after {
               content: '';
               position: relative;
               width: 100px;
               height: 20px;
               color: $coral-red;
-            }
-          }
-        }
-        &.section-3 {
-          @include flexColumn;
-          flex: 1;
-          justify-content: flex-end;
-          i {
-            font-size: 40px;
-            color: cc(txt, .65);
-            cursor: pointer;
-            @include transition; 
-  
-            &:hover, &:active, &:focus {
-              color: cc(txt);
             }
           }
         }

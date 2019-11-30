@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { menuCollection, Auth } from '@/firebase'
+import { menuCollection, Auth, menusCollection } from '@/firebase'
 // import VuexPersist from 'vuex-persist'
 // import localForage from 'localforage'
 import router from './router'
@@ -20,6 +20,7 @@ export default new Vuex.Store({
   // plugins: [vuexStorage.plugin],
   state: {
     menuItems: [],
+    menus: [],
     errors: [],
     user: {
       userId: null,
@@ -32,26 +33,15 @@ export default new Vuex.Store({
     loading: false
   },
   mutations: {
-    login(state, userData) {
-      // console.log('mutations login state, userData', state, userData)
-      // state.token = userData.token
-      // state.userId = userData.userId
-      // state.expirationDate = userData.expirationDate
-      // state.user = userData.user
-    },
-    logout(state){
-      // console.log('mutations LOGOUT state', state)
-      // state.token = ''
-      // state.userId = ''
-      // state.expirationDate = ''
-      // state.user = ''
-    },
     setUser: (state, user) => {
       // console.log('SETUSER user', user)
       state.user = user
     },
     setMenu: (state, menuItems) => {
       state.menuItems = menuItems
+    },
+    setMenus: (state, menu) => {
+      state.menus = menu
     },
     setLoading: (state, loading) => {
       state.loading = loading
@@ -138,6 +128,19 @@ export default new Vuex.Store({
         menuItems.push(appData)
       })
       context.commit('setMenu', menuItems)
+    },
+    setMenus: async context => {
+      // console.log('setMenu, context', context)
+      let snapshot = await menusCollection.orderBy('createdAt').get();
+      console.log('snapshot', snapshot)
+      // const menuItems = []
+      // snapshot.forEach(doc => {
+      //   let appData = doc.data()
+      //   appData.id = doc.id
+      //   // console.log('appData', appData)
+      //   menuItems.push(appData)
+      // })
+      // context.commit('setMenu', menuItems)
     }
   },
   getters: {

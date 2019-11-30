@@ -4,7 +4,8 @@
     <toolbar />
     <div class="home-container" :class="{ 'show-tools': tools, 'container-right': sidebar }">
       <topbar @showTools='showTools' @showSidebar='showSidebar' />
-      <menu-template></menu-template>
+      <dashboard />
+      <!-- <menu-template></menu-template> -->
       <bottombar />
     </div>
   </div>
@@ -16,9 +17,10 @@ import Toolbar from '@/components/navs/Toolbar'
 import Sidebar from '@/components/navs/Sidebar'
 import Topbar from '@/components/navs/Topbar'
 import Bottombar from '@/components/navs/Bottombar'
+import Dashboard from '@/components/Dashboard'
 export default {
   name: 'home',
-  components: { MenuTemplate, Sidebar, Topbar, Toolbar, Bottombar },
+  components: { MenuTemplate, Sidebar, Topbar, Toolbar, Bottombar, Dashboard },
   data () {
     return {
       menuClicked: false,
