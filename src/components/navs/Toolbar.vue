@@ -3,7 +3,7 @@
     <ul>
       <li>New Page</li>
       <li>Add Item</li>
-      <li>Download</li>
+      <li @click="$emit('printMenu')">Download</li>
       <li>Save</li>
     </ul>
   </div>

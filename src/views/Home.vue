@@ -1,11 +1,11 @@
 <template>
   <div class="home-container-wrapper">
     <sidebar />
-    <toolbar />
+    <toolbar @printMenu="printMenu" />
     <div class="home-container" :class="{ 'show-tools': tools, 'container-right': sidebar }">
       <topbar @showTools='showTools' @showSidebar='showSidebar' />
-      <dashboard />
-      <!-- <menu-template></menu-template> -->
+      <!-- <dashboard /> -->
+      <menu-template :printMe="printMe"></menu-template>
       <bottombar />
     </div>
   </div>
@@ -25,10 +25,14 @@ export default {
     return {
       menuClicked: false,
       tools: false,
-      sidebar: false
+      sidebar: false,
+      printMe: false
     }
   },
   methods: {
+    printMenu (data) {
+      this.printMe = true
+    },
     showTools (data) {
       this.tools = data
     },

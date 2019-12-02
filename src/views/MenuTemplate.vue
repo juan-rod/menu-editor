@@ -23,6 +23,7 @@ import { printMenu as print } from '@/utils/print'
 export default {
   name: 'MenuTemplate',
   components: { MenuBody, MenuHeader, MenuFooter ,MenuEditor },
+  props: ['printMe'],
   data () {
     return {
       scaleForPrint: false,
@@ -36,6 +37,12 @@ export default {
   },
   mounted () {
     this.getData()
+  },
+  watch: {
+    printMe (newVal) {
+      console.log('printMe newVal', newVal)
+      this.printMenu()
+    }
   },
   methods: {
     async getData () {
