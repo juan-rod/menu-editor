@@ -17,10 +17,10 @@ Vue.use(Vuex)
 // })
 
 export default new Vuex.Store({
-  // plugins: [vuexStorage.plugin],
   state: {
     menuItems: [],
     menus: [],
+    currentMenuId: null,
     errors: [],
     user: {
       userId: null,
@@ -52,6 +52,10 @@ export default new Vuex.Store({
     },
     clearError: (state) => {
       state.errors = []
+    },
+    setNewMenuId: (state, menuId) => {
+      console.log('setNewMenuId menuId', menuId)
+      state.currentMenuId = menuId
     }
   },
   actions: {
@@ -113,7 +117,6 @@ export default new Vuex.Store({
       commit('setUser', null)
     },
     setErrors ({commit}, error) {
-      console.log('setErrors', errors)
       commit('setError', error)
     },
     setMenu: async context => {
@@ -129,18 +132,10 @@ export default new Vuex.Store({
       })
       context.commit('setMenu', menuItems)
     },
-    setMenus: async context => {
-      // console.log('setMenu, context', context)
-      let snapshot = await menusCollection.orderBy('createdAt').get();
-      console.log('snapshot', snapshot)
-      // const menuItems = []
-      // snapshot.forEach(doc => {
-      //   let appData = doc.data()
-      //   appData.id = doc.id
-      //   // console.log('appData', appData)
-      //   menuItems.push(appData)
-      // })
-      // context.commit('setMenu', menuItems)
+    createNewMenu: async context => {
+      let newMenu = await menusCollection.doc()
+      console.log('newMenu', newMenu)
+      context.commit('setNewMenuId', newMenu.id)
     }
   },
   getters: {
@@ -148,6 +143,7 @@ export default new Vuex.Store({
     loggedIn: state => !!state.token,
     user (state) {
       return state.user
-    }
+    },
+    currentMenuId: state => state.currentMenuId
   }
 })

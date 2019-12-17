@@ -18,7 +18,12 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "home" */ './views/Home.vue'),
       meta: {
         requiresAuth: true
-      }
+      },
+      children: [
+        {
+          path: '/new-menu/:id'
+        }
+      ]
     },
     {
       path: '/login',

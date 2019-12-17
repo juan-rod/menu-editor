@@ -1,0 +1,23 @@
+{
+  "users": {
+    "user_id_1": {
+      "username": "user one",
+      "profile_pic": "some_url",
+      "menu_counter" : 2,
+      "author_of_menus": [
+        "menu_id_1",
+        "menu_id_2"
+      ]
+    }
+  },
+  "menus": {
+    "menu_id_1": {
+      "createdBy": "user_id_1",
+      "createdOn": "date",
+      "updatedOn": "date",
+      "menuItems": "",
+      "menuType": "dinner"
+    },
+    "menu_id_2": {}
+  }
+}

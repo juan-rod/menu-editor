@@ -1,11 +1,11 @@
 <template>
-  <div class="home-container-wrapper">
+  <div class="home-container-wrapper" style="border:2px dotted white;">
     <sidebar />
     <toolbar @printMenu="printMenu" />
     <div class="home-container" :class="{ 'show-tools': tools, 'container-right': sidebar }">
       <topbar @showTools='showTools' @showSidebar='showSidebar' />
-      <!-- <dashboard /> -->
-      <menu-template :printMe="printMe"></menu-template>
+      <dashboard />
+      <!-- <menu-template :printMe="printMe"></menu-template> -->
       <bottombar />
     </div>
   </div>
