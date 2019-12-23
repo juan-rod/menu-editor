@@ -1,0 +1,37 @@
+{
+  "menu_type": "happy_hour",
+  "items": [
+    {
+      "title": "Drink Specials",
+      "location": "",
+      "price": null,
+      "description": "$3 wells and domestics $2 off cocktails, drafts, and wine",
+      "type": "drink",
+      "order": 0
+    },
+    {
+      "title": "Patatas Bravas",
+      "location": "Spain",
+      "price": 5,
+      "description": "Crispy Potatoes, Pecan Romesco, Garlic Aioli, Brava Oil ",
+      "type": "food",
+      "order": 1
+    },
+    {
+      "title": "Hungarian Meatballs",
+      "location": "Hungary",
+      "price": 5,
+      "description": "Pork Meatballs, Rich Tomato, Herbs",
+      "type": "food",
+      "order": 2
+    },
+    {
+      "title": "Hot Dog",
+      "location": "Seattle (USA)",
+      "price": 5,
+      "description": "Post Oak Red Hot, Whipped Cream Cheese, Caramelized Onion, Cherry Bomb Sauce ",
+      "type": "food",
+      "order": 3
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+// // #post-36 .entry-content .wrapper .bootys-menu {
+// .wrapper .bootys-menu {
+//   background-color: white;
+//   display: flex;
+//   flex-direction: column;
+//   border: 1px solid rgb(220, 220, 220);
+//   box-shadow: 6px 8px 5px 0px rgba(121, 120, 120, 0.2);
+//   padding: 20px 40px;
+//   font-family: 'artisan12', Helvetica, Arial, sans-serif;
+// }
+// .bootys-menu[size="A4"] {  
+//   width: 15.75cm;
+//   height: auto;
+// }
+// .bootys-menu-header {
+//     width: 100%;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+// }
+// .bootys-menu-header-top-border {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   margin: 0 0 16px 0;
+// }
+// .bootys-menu-header-top-border .dashes {
+//   font-size: 14px;
+//   color: #be1e2d;
+// }
+// .bootys-menu-header-top-border .middle-box {
+//   height: 14px;
+//   width: 50%;
+//   background: #eee;
+//   margin: 0 16px;
+// }
+// .bootys-menu-type {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+// .bootys-menu-type .bootys-menu-type-container {
+//   height: 46px;
+//   width: 40%;
+//   border-top: 2px solid black;
+//   border-left: 2px solid black;
+//   border-right: 2px solid black;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .bootys-menu-type .bootys-menu-type-container p {
+//   font-size: 24px;
+//   text-transform: uppercase;
+//   color: #be1e2d;
+// }
+// .bootys-menu-body {
+//   flex: 1;
+// /*   // margin-top: 30px; */
+// }
+// .bootys-menu-body .menu-item-card {
+//   border: 2px solid black;
+// /*   // height: 72px; */
+//   height: 56px;
+//   background-color: white;
+//   display: flex;
+//   flex-direction: column;
+//   margin-bottom: 18px;
+// }
+// // .brunch-menu .bootys-menu-body.brunch-body #item2,
+// // .brunch-menu .bootys-menu-body.brunch-body #item4,
+// // .brunch-menu .bootys-menu-body.brunch-body #item6,
+// // .brunch-menu .bootys-menu-body.brunch-body #item8 {
+// //   height: 72px;
+// // }
+// .bootys-menu-body .menu-item-card .menu-item-wrapper {
+//   position: relative;
+//   display: flex;
+//   height: 100%;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header,
+// .bootys-menu-body .menu-item-card .menu-item-body {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: flex-start;
+// }
+
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-title {
+// /*   // font-size: 28px; */
+//   font-size: 22px;
+//   flex: 2;
+//   border-right: 2px solid black;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-title p {
+//   font-size: 22px;
+//   padding: 10px 6px 4px;
+//   color: rgba(24,26,27,1);
+//   text-transform: uppercase;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-title .menu-item-title--location p{
+//   border-top: 1px dotted rgba(24,26,27,1);
+//   font-size: 20px;
+//   color: #4c4e4d;
+//   letter-spacing: -0.53px;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-details {
+//  display: flex;
+//  flex-direction: row;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-details div.block {
+//   padding: 6px 0;
+//   width: 76px;
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .bootys-menu-body .menu-item-card .menu-item-header .menu-item-details div.block span {
+// /*   // font-size: 37px; */
+//   font-size: 22px;
+//   margin: 4px 0;
+// }
+// .menu-item-body {
+//   border-top: 1px solid rgba(24,26,27,1);
+// }
+// .menu-item-body  .menu-item-body--description {
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+// }
+// .menu-item-body p {
+//   font-size: 16px;
+//   padding: 10px 6px;
+//   color: rgba(24,26,27,1);
+//   width: 100%;
+// }
+
+// /* /// brunch menu items */
+// .menu-item-header.brunch {
+//   display: flex;
+//   flex-direction: row;
+// }
+// .menu-item-header.brunch .brunch-menu-item-body {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   border-right: 2px solid black;
+//   width: 100%;
+// }
+// .menu-item-header.brunch .brunch-menu-item-price {
+//   width: 15%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 22px;
+// }
+// .menu-item-header.brunch .brunch-menu-item-body .brunch-menu-item-title {
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   border-bottom: 1px dotted black;
+//   padding: 0 0 0px 10px;
+//   text-transform: uppercase;
+// }
+// .menu-item-header.brunch .brunch-menu-item-body .brunch-menu-item-title p {
+//   font-size: 16px;
+//   margin-top: 6px;
+// }
+// .menu-item-header.brunch .brunch-menu-item-body .brunch-menu-item-description {
+//   color: rgba(24,26,27,1);
+//   width: 100%;
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   padding: 2px 0 0 10px;
+//   text-transform: lowercase;
+// }
+// .menu-item-header.brunch .brunch-menu-item-body .brunch-menu-item-description p{
+//   font-size: 12px;
+//   letter-spacing: -0.53px;
+// }
+// .bootys-menu-body.brunch-body .menu-item-card{
+//   margin-bottom: 8px;
+//   height: 50px;
+// }
+// .bootys-menu-body.brunch-body .brunch-drinks-divide {
+//   color: #be1e2d;
+//   display: flex;
+//   justify-content: center;
+//   margin: 12px 0;
+// }
+
+// /* /// dinner menu items */ 
+// .bootys-menu-body.dinner-body .menu-item-card{
+//   height: 88px;
+// }
+// .menu-item-header.dinner {
+//   display: flex;
+//   flex-direction: row;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top {
+//   flex: 2;
+//   border-bottom: 1px solid black;
+//   display: flex;
+//   flex-direction: row;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top .top-wrapper {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top .top-wrapper .dinner-menu-item-title, 
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top .top-wrapper .dinner-menu-item-location {
+//   flex: 1;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   padding: 0 0 0px 10px;
+// } 
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top .top-wrapper .dinner-menu-item-location p{
+//   color: #989A98;
+//   font-size: 14px;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-body-top .dinner-menu-item-price{
+//   width: 12%;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 22px;
+//   border-left: 2px solid black;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-title {
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   border-bottom: 1px dotted black;
+//   padding: 0 0 0px 10px;
+//   text-transform: uppercase;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-title p {
+//   font-size: 16px;
+//   line-height: 1.2;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-description {
+//   color: rgba(24,26,27,1);
+//   width: 100%;
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   padding: 2px 0 0 10px;
+//   text-transform: lowercase;
+// }
+// .menu-item-header.dinner .dinner-menu-item-body .dinner-menu-item-description p{
+//   font-size: 12px;
+//   letter-spacing: -0.53px;
+// }
+
+// // ************* HAPPY HOUR ********** //
+// .bootys-menu.hh-menu[size="A4"] {  
+//   width: 15.75cm;
+//   height: calc(29.7cm / 1.5);
+// }
+// .bootys-menu-body.hh-body .menu-item-card  {
+//   height: 60px;
+// }
+// .bootys-menu-body.hh-body .menu-item-card  {
+//   height: 60px;
+// }
+// .bootys-menu-body.hh-body #item2.menu-item-card,
+// .bootys-menu-body.hh-body #item3.menu-item-card,
+// .bootys-menu-body.hh-body #item4.menu-item-card {
+//   height: 88px;
+// }
+// .menu-item-header.brunch.hh .brunch-menu-item-body .brunch-menu-item-description{
+//   display: block;
+// }
+// .menu-item-header.brunch.hh .brunch-menu-item-body .brunch-menu-item-description p{
+//   margin-bottom: 4px;
+// }
+
+// // ************* KISS ********** //
+// .menu-item-card.brunch-drinks.kiss-drinks .menu-item-header.brunch .brunch-menu-item-body .brunch-menu-item-title{
+//   border: none;
+// }
+// .bootys-menu-body.brunch-body .menu-item-card.brunch-drinks.kiss-drinks {
+//   height: 42px;
+// }
+
+// // ************* HOT STUFF ********** //
+// .bootys-menu-type.hot-stuff-menu-type {
+//   margin-top: 2em;
+// }
+// .bootys-menu-type.hot-stuff-menu-type .bootys-menu-type-container {
+//   width: 50%;
+// }
+// .bootys-menu-body.brunch-body .menu-item-card.hotstuff-drinks {
+//   height: 56px;
+// }

@@ -21,6 +21,9 @@ export default new Vuex.Store({
     menuItems: [],
     menus: [],
     currentMenuId: null,
+    currentMenu: null,
+    currentMenuItems: [],
+    currentMenuType: '',
     errors: [],
     user: {
       userId: null,
@@ -34,14 +37,10 @@ export default new Vuex.Store({
   },
   mutations: {
     setUser: (state, user) => {
-      // console.log('SETUSER user', user)
       state.user = user
     },
     setMenu: (state, menuItems) => {
       state.menuItems = menuItems
-    },
-    setMenus: (state, menu) => {
-      state.menus = menu
     },
     setLoading: (state, loading) => {
       state.loading = loading
@@ -56,6 +55,29 @@ export default new Vuex.Store({
     setNewMenuId: (state, menuId) => {
       console.log('setNewMenuId menuId', menuId)
       state.currentMenuId = menuId
+    },
+    setNewMenuType: (state, menuType) => {
+      console.log('setNewMenuType menuType', menuType)
+      state.currentMenuType = menuType
+    },
+    setNewMenu: (state, menu) => {
+      console.log('menu', menu)
+      state.menus = [ menu ]
+    },
+    setCurrentMenu: (state, {menuData, menuId}) => {
+      console.log('menuData, menuId', menuData, menuId)
+      state.currentMenu = {...menuData, id: menuId }
+    },
+    getMenu: (state, menu) => {
+      console.log('menu', menu)
+      state.currentMenu = menu
+    },
+    setCurrentMenuItems: (state, item) => {
+      state.currentMenuItems.push(item)
+    },
+    clearCurrentMenu: (state) => {
+      state.currentMenu = null
+      state.currentMenuItems = []
     }
   },
   actions: {
@@ -64,13 +86,12 @@ export default new Vuex.Store({
       commit('clearError')
       Auth.signInWithEmailAndPassword(authData.email, authData.password)
         .then(data => {
-          // console.log('data', data)
           commit('setLoading', true)
           const user = {
-            userId: data.uid,
-            name: data.displayName,
-            email: data.email,
-            photoUrl: data.photoURL,
+            userId: data.user.uid,
+            name: data.user.displayName,
+            email: data.user.email,
+            photoUrl: data.user.photoURL,
             loggedIn: true,
             token: '123'
           }
@@ -120,22 +141,54 @@ export default new Vuex.Store({
       commit('setError', error)
     },
     setMenu: async context => {
-      // console.log('setMenu, context', context)
       let snapshot = await menuCollection.orderBy('createdAt').get();
-      // console.log('snapshot', snapshot)
       const menuItems = []
       snapshot.forEach(doc => {
         let appData = doc.data()
         appData.id = doc.id
-        // console.log('appData', appData)
         menuItems.push(appData)
       })
       context.commit('setMenu', menuItems)
     },
     createNewMenu: async context => {
       let newMenu = await menusCollection.doc()
-      console.log('newMenu', newMenu)
       context.commit('setNewMenuId', newMenu.id)
+      context.commit('setNewMenuType', 'brunch')
+    },
+    setNewMenu: async (context, menu) => {
+      // Add a new document with a generated id.
+      await menusCollection.add({
+        createdBy: menu.createdBy,
+        createdDate: menu.createdDate,
+        menu_type: menu.menu_type,
+        updatedDate: menu.updatedDate
+      })
+      .then(function(docRef) {
+        let menuItems = menu.menu_items
+        menuItems.forEach(item => {
+          menusCollection.doc(docRef.id).collection('menu_items').add(item)
+        })
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+    },
+    getMenu: async (context, menuType) => {
+      menusCollection.where("menu_type", "==", menuType)
+        .get()
+        .then(function(querySnapshot) {
+          // clear current menu
+          context.commit('clearCurrentMenu')
+          
+          querySnapshot.forEach(function(doc) {
+            console.log('getMenu: doc.id', doc.id)
+            context.commit('setCurrentMenu', {menuData: doc.data(), menuId: doc.id})
+            getMenuItems(context, doc)
+          });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
+        });
     }
   },
   getters: {
@@ -144,6 +197,18 @@ export default new Vuex.Store({
     user (state) {
       return state.user
     },
-    currentMenuId: state => state.currentMenuId
+    currentMenuId: state => state.currentMenuId,
+    currentMenu: state => state.currentMenu,
+    currentMenuType: state => state.currentMenuType
   }
 })
+
+function getMenuItems (context, doc) {
+  menusCollection.doc(doc.id).collection('menu_items')
+    .get()
+    .then(function(snapshot) {
+      snapshot.forEach(function(data) {
+        context.commit('setCurrentMenuItems', data.data())
+      })
+    })
+}

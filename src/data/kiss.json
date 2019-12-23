@@ -1,0 +1,35 @@
+{
+  "menu_type": "kiss",
+  "items": [
+    {
+      "title": "Tullamore DEW and a Brooklyn Lager",
+      "price": 10,
+      "type": "drink",
+      "order": 0
+    },
+    {
+      "title": "Espolon and Dallas Blonde",
+      "price": 10,
+      "type": "drink",
+      "order": 1
+    },
+    {
+      "title": "Ilegal Mezcal and a Tecate",
+      "price": 10,
+      "type": "drink",
+      "order": 2
+    },
+    {
+      "title": "Campari and an IPA",
+      "price": 12,
+      "type": "drink",
+      "order": 3
+    },
+    {
+      "title": "Fernet and a High Life Pony",
+      "price": 8,
+      "type": "drink",
+      "order": 4
+    }
+  ]
+}

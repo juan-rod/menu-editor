@@ -1,0 +1,40 @@
+{
+  "menu_type": "hot_stuff",
+  "items": [
+    {
+      "title": "Hot Thotty",
+      "price": 8,
+      "description": "Tullamore DEW, Lemon, Honey",
+      "type": "drink",
+      "order": 0
+    },
+    {
+      "title": "Ginger Bells",
+      "price": 9,
+      "description": "Tullamore DEW, Intense Ginger Liquor, Lemon, Honey",
+      "type": "drink",
+      "order": 1
+    },
+    {
+      "title": "Xocolate Papi",
+      "price": 8,
+      "description": "Tullamore DEW, Ancho Reyes, Mexican Xocolate",
+      "type": "drink",
+      "order": 2
+    },
+    {
+      "title": "Offlay Good Irish Coffee",
+      "price": 8,
+      "description": "Tullamore DEW, Baileys, coffee",
+      "type": "drink",
+      "order": 3
+    },
+    {
+      "title": "Spicy Boi Cider",
+      "price": 8,
+      "description": "Trinity Cranberry Cider, Intense Ginger Liquor, Cinnamon, Clove, Cardamom",
+      "type": "drink",
+      "order": 4
+    }
+  ]
+}

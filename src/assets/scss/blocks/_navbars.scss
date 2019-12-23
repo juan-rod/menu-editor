@@ -45,6 +45,7 @@
     ul {
       @include flexColumnFlexStart;
       padding: 0 0 0 20px;
+      margin-bottom: 60px;
       li {
         color: cc(txt, .8);
         @extend %txt--subtitle;
@@ -55,6 +56,17 @@
           // transform: scale(1.18);
           color: cc(txt, 1);
         }
+      }
+    }
+    ul:nth-of-type(1) {
+      li {
+        @include fluid-type(10px, 12px);
+        padding-left: 8px;
+      }
+      li:nth-of-type(1) {
+        padding-left: 0;
+        @include fluid-type(14px, 16px);
+        color: cc(txt, .8);
       }
     }
   }

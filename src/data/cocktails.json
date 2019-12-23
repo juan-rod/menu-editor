@@ -1,0 +1,47 @@
+{
+  "menu_type": "cocktails",
+  "items": [
+    {
+      "title": "Old Fashioned",
+      "price": 10,
+      "description": "Rye, Sugar, Bitters, Orange Zest",
+      "type": "drink",
+      "order": 0
+    },
+    {
+      "title": "Moscow Mule",
+      "price": 10,
+      "description": "Vodka, Lime, Ginger Beer",
+      "type": "drink",
+      "order": 1
+    },
+    {
+      "title": "Daiquiri",
+      "price": 8,
+      "description": "Rum, Lime, Sugar",
+      "type": "drink",
+      "order": 2
+    },
+    {
+      "title": "Bee's Knees",
+      "price": 9,
+      "description": "Gin, Lemon, Honey",
+      "type": "drink",
+      "order": 3
+    },
+    {
+      "title": "Juschu",
+      "price": 10,
+      "description": "Tequila, Lime, Honey, Bitters",
+      "type": "drink",
+      "order": 4
+    },
+    {
+      "title": "Whiskey Daisy",
+      "price": 10,
+      "description": "Bourbon, Lemon, Curaçao ",
+      "type": "drink",
+      "order": 5
+    }
+  ]
+}

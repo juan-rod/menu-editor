@@ -2,19 +2,21 @@
   <div class="menu-header">
     <div class="menu-header-border">
       <div class="dashes">
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
-        <span>\</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
+        <span>/</span>
       </div>
       <div class="middle-box"></div>
       <div class="dashes">
+        <span>/</span>
         <span>/</span>
         <span>/</span>
         <span>/</span>

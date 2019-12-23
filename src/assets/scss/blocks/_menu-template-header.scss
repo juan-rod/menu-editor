@@ -27,7 +27,7 @@
     margin-top: 20px;
     .title-label-container {
       height: 46px;
-      width: 50%;
+      width: 48%;
       border-top: 2px solid black;
       border-left: 2px solid black;
       border-right: 2px solid black;
@@ -35,7 +35,8 @@
       justify-content: center;
       align-items: center;
       p {
-        font-size: 24px;
+        font-size: 30px;
+        margin-top: 8px;
         text-transform: uppercase;
         color: cc(b-red);
       }

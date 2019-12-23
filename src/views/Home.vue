@@ -3,8 +3,8 @@
     <sidebar />
     <toolbar @printMenu="printMenu" />
     <div class="home-container" :class="{ 'show-tools': tools, 'container-right': sidebar }">
-      <topbar @showTools='showTools' @showSidebar='showSidebar' />
-      <dashboard />
+      <topbar @showTools="showTools" @showSidebar="showSidebar" />
+      <dashboard @showTools="showTools"/>
       <!-- <menu-template :printMe="printMe"></menu-template> -->
       <bottombar />
     </div>
@@ -34,6 +34,7 @@ export default {
       this.printMe = true
     },
     showTools (data) {
+      console.log('data', data)
       this.tools = data
     },
     showSidebar (data) {

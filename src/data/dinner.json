@@ -1,0 +1,102 @@
+{
+  "menu_type": "dinner",
+  "items": [
+    {   
+      "title": "Chicken Shawarma",
+      "location": "Morocco",
+      "price": 12,
+      "description": "House Made Pita, Local Chicken, House Cucumber Yogurt, Tomato, Herbs ",
+      "type": "food",
+      "order": 0
+    },
+    {
+      "title": "Patatas Bravas",
+      "location": "Spain",
+      "price": 8,
+      "description": "Crispy Potatoes, Pecan Romesco, Garlic Aioli, Brava Oil ",
+      "type": "food",
+      "order": 1
+    },
+    {
+      "title": "Hungarian Meatballs",
+      "location": "Hungary",
+      "price": 10,
+      "description": "Pork Meatballs, Rich Tomato, Herbs ",
+      "type": "food",
+      "order": 2
+    },
+    {
+      "title": "Fried Chicken",
+      "location": "Korea",
+      "price": 12,
+      "description": "Fermented Rice Batter, Korean Spiced Honey, basil ",
+      "type": "food",
+      "order": 3
+    },
+    {
+      "title": "Maduros con Queso",
+      "location": "Brazil",
+      "price": 7,
+      "description": "Fried Sweet Plantains, Queso Fresco, Cilantro, TX EVOO, Lime Spice",
+      "type": "food",
+      "order": 4
+    },
+    {
+      "title": "Hot Dog",
+      "location": "Chicago (USA)",
+      "price": 7,
+      "description": "Post Oak Red Hot, Mustard, Tomato, Onion, Sport Pepper, Relish, dill seed  ",
+      "type": "food",
+      "order": 5
+    },
+    {
+      "title": "Imperial spring Roll",
+      "location": "Vietnam",
+      "price": 12,
+      "description": "Shrimp, Crispy Spring Roll Wrapper, Shitake Mushrooms, Carrots, Mae Ploy Sauce,",
+      "type": "food",
+      "order": 6
+    },
+    {
+      "title": "Frito pie",
+      "location": "Texas",
+      "price": 8,
+      "description": "Texas style chili, crispy corn chips, white cheddar",
+      "type": "food",
+      "order": 7
+    },
+    {
+      "title": "Dosa",
+      "location": "India",
+      "price": 10,
+      "description": "Rice and lentil pancake, curried veggies, onions, Cherry Bomb sauce ",
+      "type": "food",
+      "order": 8
+    },
+    {
+      "title": "Okonomiyaki",
+      "location": "Japan",
+      "price": 12,
+      "description": "Dashi Pancake, Garlic Aioli, Bonito Flake, Fish Sauce Caramel, Veggies",
+      "type": "food",
+      "order": 9
+    },
+    {
+      "title": "Plantain Foster",
+      "location": "New Orleans (USA)",
+      "price": 7,
+      "description": "Fried Plantain, Spiced Caramel, Rum, Vanilla Ice Cream",
+      "type": "food",
+      "order": 10
+    },
+    {
+      "title": "Cinnamon Churros",
+      "location": "Mexico",
+      "price": 7,
+      "description": "Cinnamon Donuts, Chocolate Dip, Cinnamon Sugar, vanilla ice cream",
+      "type": "food",
+      "order": 11
+    }
+  ]
+}
+

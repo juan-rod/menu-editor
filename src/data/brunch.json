@@ -1,0 +1,109 @@
+{
+  "menu_type": "brunch",
+  "items": [
+    {
+      "title": "B.E.C. sandwich",
+      "location": "",
+      "price": 8,
+      "description": "Thick Cut Slab Bacon, Scrambled Eggs, White Cheddar, Brioche Bun",
+      "type": "food",
+      "order": 0
+    },
+    {
+      "title": "Chicken and Waffles",
+      "location": "",
+      "price": 12,
+      "description": "Race Batter Chicken, Belgian Waffle, Bourbon Pecan Maple Syrup",
+      "type": "food",
+      "order": 1
+    },
+    {
+      "title": "Spanish Omlette",
+      "location": "",
+      "price": 9,
+      "description": "Fresh Veggies, Pecan Romesco, Smoked Paprika",
+      "type": "food",
+      "order": 2
+    },
+    {
+      "title": "French Toast",
+      "location": "",
+      "price": 10,
+      "description": "Fried Brioche Sticks, Fig Jam Whipped Cream, Agave Nectar",
+      "type": "food",
+      "order": 3
+    },
+    {
+      "title": "Steak and Eggs",
+      "location": "",
+      "price": 12,
+      "description": "Black Pepper Steak, Fried Eggs, Crispy Potatoes",
+      "type": "food",
+      "order": 4
+    },
+    {
+      "title": "Patatas Bravas",
+      "location": "",
+      "price": 8,
+      "description": "Crispy Potatoes, Pecan Romesco, Garlic Aioli, Brava Oil",
+      "type": "food",
+      "order": 5
+    },
+    {
+      "title": "Dosa",
+      "location": "",
+      "price": 8,
+      "description": "Rice and lentil pancake, curried veggies, onions, hot sauce",
+      "type": "food",
+      "order": 6
+    },
+    {
+      "title": "Add Egg",
+      "location": "",
+      "price": 3,
+      "description": "Add any style to any dish",
+      "type": "food",
+      "order": 7
+    },
+    {
+      "title": "Mimosa",
+      "location": "",
+      "price": 4,
+      "description": "Make it a pitcher for $20",
+      "type": "drink",
+      "order": 8
+    },
+    {
+      "title": "Bloody Buddy",
+      "location": "",
+      "price": 6,
+      "description": "Add a High Life Pony for $2",
+      "type": "drink",
+      "order": 9
+    },
+    {
+      "title": "Xocolate Martini",
+      "location": "",
+      "price": 10,
+      "description": "Vodka, Baileys, Ancho Reyes, Mexican Xocolate",
+      "type": "drink",
+      "order": 10
+    },
+    {
+      "title": "Oh You Pretty Thang",
+      "location": "",
+      "price": 8,
+      "description": "Vodka, Aperol, OJ",
+      "type": "drink",
+      "order": 11
+    },
+    {
+      "title": "Horchata",
+      "location": "",
+      "price": 8,
+      "description": "Tequila, Café Lolita, Horchata",
+      "type": "drink",
+      "order": 12
+    }
+  ]
+}
