@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import validate from '@/modules/validation-module';
+import { Action } from '@/store/user/types'
 export default {
  name: 'LoginForm',
  data () {
@@ -17,18 +17,20 @@ export default {
     }
   },
   methods: {
-    login(event) {
-      // console.log('this.errors', this.errors)
-      // if (!validate.email(this.email)) {
-        // this.$store.dispatch('setErrors', { message: 'Please enter a valid email address' })
-        // this.errors.push('Please enter a valid email address');
-      // }
-      // console.log('this.errors', this.errors)
-      // if (!this.errors.length) {
-      //   event.target.classList.add('was-validated');
-        this.$store.dispatch('loginUser', { email: this.email, password: this.password })
-      // }
+    login() {
+      this.$store.dispatch(`user/${Action.LOGIN}`, { email: this.email, password: this.password })
     },
+    doCommand(e) {
+      if ((this.email.length > 0 && this.password.length > 0) && e.keyCode === 13) {
+        this.login()
+      }
+    }
+  },
+  created() {
+    window.addEventListener('keypress', this.doCommand)
+  },
+  destroyed() {
+    window.removeEventListener('keypress', this.doCommand)
   }
 }
 </script>

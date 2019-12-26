@@ -15,6 +15,8 @@
 
 <script>
 import MenuTemplate from '@/views/MenuTemplate'
+import { Action } from '@/store/menu/types'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Dashboard',
   data () {
@@ -22,12 +24,14 @@ export default {
       selected: false
     }
   },
+  computed: {
+    ...mapGetters('menu',['menuId'])
+  },
   methods: {
    async createNewMenu () {
-      await this.$store.dispatch('createNewMenu')
-      let menuId = await this.$store.getters.currentMenuId
-      this.$router.push({ path: `/new-menu/${menuId}` })
+      await this.$store.dispatch(`menu/${Action.CREATE_NEW_MENU}`)
       this.selected = true
+      this.$router.push({ path: `/new-menu/${this.menuId}` })
       setTimeout(() => {
         this.$emit('showTools', true)
       }, 200);

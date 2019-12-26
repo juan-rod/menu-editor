@@ -182,13 +182,14 @@ export default new Vuex.Store({
           
           querySnapshot.forEach(function(doc) {
             console.log('getMenu: doc.id', doc.id)
+            console.log('doc.data()', doc.data())
             context.commit('setCurrentMenu', {menuData: doc.data(), menuId: doc.id})
             getMenuItems(context, doc)
-          });
+          })
         })
         .catch(function(error) {
             console.log("Error getting documents: ", error);
-        });
+        })
     }
   },
   getters: {

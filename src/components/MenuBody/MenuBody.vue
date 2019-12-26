@@ -32,6 +32,7 @@ export default {
     async setPageBreak () {
       let getTypes = await document.querySelectorAll(["data-type='drink'"])
       console.log('getTypes', getTypes)
+      return false
     },
   },
   computed: {

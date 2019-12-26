@@ -1,13 +1,13 @@
-// import Vue from 'vue'
-// import Vuex from 'vuex'
-// import user from './user'
-// import menu from './menu'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import user from './user'
+import menu from './menu'
 
-// Vue.use(Vuex)
+Vue.use(Vuex)
 
-// export const store = new Vuex.Store({
-//   modules: {
-//     user: user,
-//     menu: menu
-//   }
-// })
+export default new Vuex.Store({
+  modules: {
+    user,
+    menu
+  }
+})

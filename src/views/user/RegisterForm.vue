@@ -32,6 +32,19 @@ export default {
       // if (!this.errors.length) {
         this.$store.dispatch('registerUser', { email: this.email, password: this.password })
       // }
+      let tests = [
+        user => user.name.length >= 5 || "Username must be at least 5 characters.",
+        user => user.password === user.confirmPassword || "Passwords do not match",
+        user => user.age >= 18 || "User must be at least 18 years old.",
+      ]
+      const errors = tests.reduce((errors, test) => {
+        const result = test(user)
+        if (typeof result === "string") {
+          errors.push(result)
+        }
+        return errors
+      })
+      console.log('errors:', errors)
     }
   }
 }

@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { Action, Mutation } from '@/store/menu/types'
 export default {
   name: 'Toolbar',
   data () {
@@ -55,7 +56,8 @@ export default {
   methods: {
     getMenu(menuType) {
       console.log('menuType', menuType)
-      // this.$store.dispatch('getMenu', menuType)
+      this.$store.commit(`menu/${Mutation.SET_MENU_TYPE}`, menuType)
+      this.$store.dispatch(`menu/${Action.GET_MENU_ITEMS}`, menuType)
     }
   }
 }

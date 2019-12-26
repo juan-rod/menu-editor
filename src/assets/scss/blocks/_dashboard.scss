@@ -28,9 +28,15 @@
 
   .dashboard {
     @include flexRowCenter;
-    justify-content: space-evenly;
     height: 100%;
     width: 100%;
+    .buttons {
+      @include flexRowCenter;
+      width: 100%;
+    }
+    button.new-menu {
+      margin-right: 1em;
+    }
     button.new-menu, button.edit-menu {
       height: 300px;
       width: 300px;
